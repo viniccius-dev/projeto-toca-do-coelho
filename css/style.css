@@ -42,7 +42,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    background: black;
+    background: red;
     border-bottom: 1px solid rgba(100,100,100,0.6);
     z-index: 99;
 }
