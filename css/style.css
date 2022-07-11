@@ -1,0 +1,562 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    border: none;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+/*
+
+html {
+    font-size: 62.5%;
+}
+
+*/
+
+/**************** Sr-only - Explorar mais pra frente *****************
+
+.sr-only {
+    position: absolute;
+    height: 1px;
+    width: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: rect(0,0,0,0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+*********************************************************************/
+
+.container{
+    max-width: 110rem;
+    padding: 0 4%;
+    margin: 0 auto;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: black;
+    border-bottom: 1px solid rgba(100,100,100,0.6);
+    z-index: 99;
+}
+
+header > .container {
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    background-image: url('../images/568fcb4b49d547a983ade227eae3b790.png');
+    background-size: contain;
+    width: 6rem;
+    height: 6rem;
+    cursor: pointer;
+}
+
+header .menu-mobile {
+    display: none;
+    color: white;
+    float: right;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+header .menu-mobile .menu-hamburguer {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-hamburguer span {
+    display: flex;
+    width: 29px;
+    height: 2px;
+    margin-bottom: 5px;
+    position: relative;
+    background: #ffffff;
+    border-radius: 3px;
+    transform-origin: 6px 3px;
+    transition: transform 0.5s,
+                background 0.5s,
+                opacity 0.55s;
+}
+
+.menu-hamburguer span:first-child {
+    transform-origin: 0% 0%;
+}
+
+.menu-hamburguer span:nth-last-child(3) {
+    transform-origin: 0% 100%;
+}
+
+.activated span {
+    opacity: 1;
+    transform: rotate(45deg) translate(-3px, -1px);
+    /*background: #36383f;*/
+}
+
+.activated span:nth-of-type(2) {
+    opacity: 0;
+    transform: rotate(0deg) scale(0.2,0.2);
+}
+
+.activated span:nth-of-type(3) {
+    transform: rotate(-45deg) translate(0,-1px);
+}
+
+.menu-mobile ul {
+    top: 6rem;
+    left: 0;
+    width: 100vw;
+    height: 0;
+    overflow: hidden;
+    list-style-type: none;
+    position: absolute;
+    box-shadow: 0 0 10px #85888c;
+    background-color: #f5f6fa;
+    transition: height 0.5s, opacity 0.5s;
+}
+
+.menu-mobile ul li {
+    cursor: pointer;
+    padding: 15px 0;
+    text-align: center;
+    background-color: white;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.menu-mobile ul li:hover {
+    background-color:rgb(100,100,100);
+}
+
+.menu-mobile ul li:hover a {
+    color: white;
+}
+
+.menu-mobile ul li a {
+    color: black;
+}
+
+.menu-mobile ul li:not(:last-of-type) {
+    border-bottom: 2px solid rgb(100,100,100);
+}
+
+.activated ul {
+    height: 169px;
+}
+
+header .menu-desktop ul li {
+    font-size: .9rem;
+    display: inline-block;
+    padding: .4rem .6rem;
+}
+
+header .menu-desktop a {
+    color: #ffff;
+}
+
+header .menu-desktop a:hover {
+    border-bottom: 1px solid #ffff;
+}
+
+section.background-principal {
+    width: 100%;
+    height: 85vh;
+    background-image: url('../images/bg-principal.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin-top: 6rem;
+    position: relative;
+}
+
+section.background-principal .title {
+    color: white;
+    position: absolute;
+    top: 25%;
+    background: rgba(0,0,0,0.3);
+    padding: 0 2rem 2rem 2rem;
+    border-radius: 0.7rem;
+}
+
+section.background-principal .title h1 {
+    font-size: 5rem;
+    text-shadow: black 0.1em 0.1em 0.2em;
+}
+
+section.background-principal .title p {
+    text-shadow: rgba(0,0,0,0.7) 0.1em 0.1em 0.2em;
+    font-size: 1.4rem;
+}
+
+section.background-principal .social-medias {
+    position: absolute;
+    bottom: 5rem;
+}
+
+section.background-principal .social-medias a {   
+    color: white;
+    margin: 0 1rem;
+    font-size: 1.5rem;
+}
+
+.slogan {
+    background: #181E21;
+    padding: 8rem 0;
+}
+
+.slogan h2 {
+    width: 65%;
+    color: white;
+    font-size: 3rem;
+}
+
+section.menu {
+    background: #FFFFFF;
+    padding: 5rem 0;
+}
+
+section.menu h3 {
+    font-size: 3.5rem;
+    padding-bottom: 2rem;
+}
+
+section.menu .meals {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+section.menu .meal-single {
+    width: 40%;
+    padding: 1.5rem 0;
+    display: flex;
+}
+
+section.menu .meal-single span,
+section.menu .meal-single .description-meal h4,
+section.menu .meal-single .description-meal p {
+    color: rgb(116, 116, 116);
+    font-weight: 500;
+}
+
+section.menu .meal-single .description-meal h4 {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+}
+
+
+section.menu .meal-single span {
+    margin-left: 1.1rem;
+    font-size: .9rem;
+}
+
+.button-menu {
+    width: 13rem;
+    height: 3rem;
+    background-color: rgb(30,30,30);
+    color: white;
+    padding: .8rem 0;
+    text-align: center;
+    cursor: pointer;
+    margin-top: 2rem;
+    transition: background 0.3s;
+}
+
+.button-menu:hover {
+    background-color: rgb(60,60,60);
+}
+
+.self-introduction {
+    padding: 5rem 0;
+    background-color:#ccc;
+}
+
+.self-introduction .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* Width pai */
+    width: 100%;
+    /************/
+}
+
+
+.bg-introduction {
+    background-image: url('../images/french-fries.jpg');
+    width: 50%;
+    /* O padding vai ser calculado com base no width setado no pai (50% de 100%) */
+    padding-top: 50%;
+    /* O height: 0 serve para que caso o .description-introduction ultrapasse a altura do padding-top do .bg-introduction a imagem não fique distoricida (por causa do display: flex) */
+    height: 0;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.description-introduction {
+    width: 30%;
+}
+
+.description-introduction h3 {
+    text-transform: uppercase;
+    font-size: 1.7rem;
+    color: black;
+    padding: 2rem 0;
+}
+
+.description-introduction p {
+    font-size: .9rem;
+    color:rgb(100,100,100);
+    line-height: 1.6rem;
+}
+
+section.recipes {
+    background-color: white;
+    position: relative;
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+}
+
+section.recipes .container {
+    margin: 0;
+}
+
+.bg-local {
+    width: 25rem;
+    height: 55rem;
+    position: relative;
+    left: 0;
+    background-image: url('../images/local.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+section.recipes .recipes-single {
+    margin: 6rem 0;
+    max-width: 30rem;
+}
+
+section.recipes .recipes-single h4 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+section.recipes .recipes-single p {
+    color:rgb(100,100,100);
+}
+
+section.gallery {
+    background-color: #ccc;
+    padding: 8rem 0;
+}
+
+section.gallery .photos {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+
+section.gallery .photos .photo-single {
+    width: calc(33.3% - 1rem);
+    padding-top: calc(33.3% - 1rem);
+    margin: 1rem 0;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+
+section.gallery .photos .photo-single:nth-of-type(3n+2) {
+    margin: 1rem 1.5rem;
+}
+
+section.gallery .container h4 {
+    padding-top: 4.5rem;
+    font-size: 1.3rem;
+}
+
+section.booking {
+    padding: 8rem 2%;
+    background-color: black;
+    color: white;
+}
+
+section.booking h3 {
+    letter-spacing: .1rem;
+    text-transform: uppercase;
+    font-size: 1.9rem;
+    padding-bottom: 3.5rem;
+}
+
+section.booking p {
+    max-width: 40%;
+    font-weight: 300;
+}
+
+section.booking button {
+    margin-top: 2rem;
+    width: 12rem;
+    height: 3.5rem;
+    background-color: white;
+    color: rgb(50,50,50);
+    font-size: .9rem;
+    transition: .2s;
+    cursor: pointer;
+}
+
+section.booking button:hover {
+    background-color: rgb(50,50,50);
+    color: white;
+}
+
+footer {
+    background-color: rgb(200,200,200);
+}
+
+footer .container {
+    display: flex;
+    justify-content: space-between;
+    padding: .5rem 2%;
+    text-align: center;
+}
+
+footer .container > div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 20%;
+    font-size: .8rem;
+    font-weight: 500;
+    color: white;
+}
+
+footer .container > div p {
+    text-shadow: rgba(0,0,0,0.7) 0.1em 0.1em 0.2em;
+}
+
+footer .social-medias {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+footer .social-medias a {
+    color: black;
+    font-size: 1.7rem;
+    margin-right: 1.3rem;
+}
+
+@media screen and (max-width: 768px) {
+    
+    header .menu-desktop  { display: none; }
+
+    header .menu-mobile { display: block; }
+
+    section.background-principal .title {
+        margin-right: 3%;
+    }
+
+    section.background-principal .title h1 {
+        font-size: 3.5rem;
+    }
+
+    section.background-principal .title p {
+        font-size: 1rem;
+    }
+
+    .slogan h2,
+    section.menu h3  {
+        font-size: 2.7rem;
+    }
+    
+    section.menu .meal-single {
+        width: 100%;
+        padding: 2.5rem 0;
+        display: flex;
+    }
+
+    section.menu .meal-single span {
+        margin-left: 15%;
+    }
+
+    .self-introduction .container {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .bg-introduction {
+        width: 70%;
+    }
+
+    .description-introduction {
+        width: 90%;
+    }
+    
+    section.recipes {
+        justify-content: center;
+    }
+
+    section.recipes .recipes-single {
+        max-width: 35rem;
+    }
+
+    section.recipes .bg-local {
+        display: none;
+    }
+
+    section.gallery .photos .photo-single {
+        width: calc(50% - 2rem);
+        padding-top: calc(50% - 2rem);
+        margin: 1rem !important; /* O important não é uma boa prática */
+    }
+
+}
+
+@media screen and (max-width: 480px) {
+
+    section.background-principal .title h1 {
+        font-size: 2.8rem;
+    }
+
+    section.background-principal .title p {
+        font-size: .9rem;
+    }
+
+    .slogan h2,
+    section.menu h3 {
+        font-size: 2rem;
+    } 
+
+    section.gallery .photos {
+        justify-content: center;
+    }
+
+    section.gallery .photos .photo-single {
+        width: 90%;
+        padding-top: 90%;
+        margin: 1rem 0 !important;
+    }
+
+    section.booking {
+        padding: 8rem 5%;
+    }
+
+    footer .container > div {
+        max-width: 40%;
+    }
+}

@@ -1,0 +1,293 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    border: none;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container{
+    max-width: 110rem;
+    padding: 0 4%;
+    margin: 0 auto;
+    width: 100%;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: black;
+    border-bottom: 1px solid rgba(100,100,100,0.6);
+    z-index: 99;
+}
+
+header > .container {
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    background-image: url('../images/568fcb4b49d547a983ade227eae3b790.png');
+    background-size: contain;
+    width: 6rem;
+    height: 6rem;
+    cursor: pointer;
+}
+
+header .menu-mobile {
+    display: none;
+    color: white;
+    float: right;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+header .menu-mobile .menu-hamburguer {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-hamburguer span {
+    display: flex;
+    width: 29px;
+    height: 2px;
+    margin-bottom: 5px;
+    position: relative;
+    background: #ffffff;
+    border-radius: 3px;
+    transform-origin: 6px 3px;
+    transition: transform 0.5s,
+                background 0.5s,
+                opacity 0.55s;
+}
+
+.menu-hamburguer span:first-child {
+    transform-origin: 0% 0%;
+}
+
+.menu-hamburguer span:nth-last-child(3) {
+    transform-origin: 0% 100%;
+}
+
+.activated span {
+    opacity: 1;
+    transform: rotate(45deg) translate(-3px, -1px);
+    /*background: #36383f;*/
+}
+
+.activated span:nth-of-type(2) {
+    opacity: 0;
+    transform: rotate(0deg) scale(0.2,0.2);
+}
+
+.activated span:nth-of-type(3) {
+    transform: rotate(-45deg) translate(0,-1px);
+}
+
+.menu-mobile ul {
+    top: 6rem;
+    left: 0;
+    width: 100vw;
+    height: 0;
+    overflow: hidden;
+    list-style-type: none;
+    position: absolute;
+    box-shadow: 0 0 10px #85888c;
+    background-color: #f5f6fa;
+    transition: height 0.5s, opacity 0.5s;
+}
+
+.menu-mobile ul li {
+    cursor: pointer;
+    padding: 15px 0;
+    text-align: center;
+    background-color: white;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.menu-mobile ul li:hover {
+    background-color:rgb(100,100,100);
+}
+
+.menu-mobile ul li:hover a {
+    color: white;
+}
+
+.menu-mobile ul li a {
+    color: black;
+}
+
+.menu-mobile ul li:not(:last-of-type) {
+    border-bottom: 2px solid rgb(100,100,100);
+}
+
+.activated ul {
+    height: 169px;
+}
+
+header .menu-desktop ul li {
+    font-size: .9rem;
+    display: inline-block;
+    padding: .4rem .6rem;
+}
+
+header .menu-desktop a {
+    color: #ffff;
+}
+
+header .menu-desktop a:hover {
+    border-bottom: 1px solid #ffff;
+}
+
+section.background-principal {
+    width: 100%;
+    height: 50vh;
+    background-image: url('../images/bg-menu.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin-top: 6rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+section.background-principal .overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.1);
+    z-index: 1;
+}
+
+section.background-principal .container {
+    color: white;
+    z-index: 2;
+    font-size: 2rem;
+}
+section.background-principal .container h1 {
+    text-shadow: rgba(0,0,0,0.7) 0.1em 0.1em 0.2em;
+}
+
+section.menu {
+    background: #FFFFFF;
+    padding: 5rem 0;
+}
+
+section.menu h3 {
+    font-size: 1.7rem;
+    padding-bottom: 2rem;
+}
+
+section.menu .meals {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 5rem;
+}
+
+section.menu .meal-single {
+    width: 40%;
+    padding: 1.5rem 0;
+    display: flex;
+}
+
+section.menu .meal-single span,
+section.menu .meal-single .description-meal h4,
+section.menu .meal-single .description-meal p {
+    color: rgb(116, 116, 116);
+    font-weight: 500;
+}
+
+section.menu .meal-single .description-meal h4 {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+}
+
+
+section.menu .meal-single span {
+    margin-left: 1.1rem;
+    font-size: .9rem;
+}
+
+footer {
+    background-color: rgb(200,200,200);
+}
+
+footer .container {
+    display: flex;
+    justify-content: space-between;
+    padding: .5rem 2%;
+    text-align: center;
+}
+
+footer .container > div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 20%;
+    font-size: .8rem;
+    font-weight: 500;
+    color: white;
+}
+
+footer .container > div p {
+    text-shadow: rgba(0,0,0,0.7) 0.1em 0.1em 0.2em;
+}
+
+footer .social-medias {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+footer .social-medias a {
+    color: black;
+    font-size: 1.7rem;
+    margin-right: 1.3rem;
+}
+
+@media screen and (max-width: 768px) {
+    
+    header .menu-desktop  { display: none; }
+
+    header .menu-mobile { display: block; }
+
+    section.background-principal .title p {
+        font-size: 1rem;
+    }
+
+    section.menu h3  {
+        font-size: 2.7rem;
+    }
+    
+    section.menu .meal-single {
+        width: 100%;
+        padding: 2.5rem 0;
+        display: flex;
+    }
+
+    section.menu .meal-single span {
+        margin-left: 15%;
+    }
+
+}
+
+@media screen and (max-width: 480px) {
+
+    section.menu h3 {
+        font-size: 2rem;
+    } 
+
+    footer .container > div {
+        max-width: 40%;
+    }
+}
